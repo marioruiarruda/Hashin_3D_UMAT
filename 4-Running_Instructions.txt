@@ -1,0 +1,13 @@
+1) This is an UMAT made for ABAQUS 2022, using Intel Fortran Compiler 2016 for Windows 10.
+2) The original code is in Fortran 90, and is not ready to run in classical ABAQUS linked with FORTRAN 77 flags, 
+these need to be modified depending on the chosen compiler.
+For this reason, the UMAT is already compiled into an .OBJ file for windows use and .O for linux use.
+3) This can be used directly in the “command line or power shell” in windows user=umat.obj or in linux user=umat.o
+4) For linux the .O object files was compiled using gfortran (from GNU project), 
+it may not work with Linux Intel Compiler during the final LINKING.
+
+Example in CMD “command line” for windows 10:
+abaqus job=example cpus=2 user=umat.obj
+
+Example in terminal for linux:
+abaqus job=example cpus=2 user=umat.o
