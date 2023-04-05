@@ -9,6 +9,10 @@ For Geometrical Non-Linear Analysis, when using this code, the viscosity paramet
 
 4) Future versions of this UMAT will be posted without warning.
 
-5) The matrix damage evolution has been updated into a new function, 
+5) The Jacobian is written in terms of secant matrix (not tangent matrix),
+therefore it is not expected an quadratic convergence when using ABAQUS standard,
+and it is recomended to reduce some iterative criteria (in the step module) to allow convergence.
+
+6) The matrix damage evolution has been updated into a new function, 
 not present in the original manuscript to better simulate the 3D behaviour. 
 This is in RED color in the Pre-Print_UMAT_Hashin_3D.pdf
