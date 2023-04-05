@@ -1,0 +1,62 @@
+----####--------------------------------####---
+----####---COPYRIGHT AND PERMISSIONS----####---
+----####--------------------------------####---
+
+1) Copyright 2022 by Mário Rui Arruda and Mattia Tromboni,
+all rights reserved. No part of this subroutine may be reproduced or
+use in any manner without written permission of the copyright owner.
+
+2) If permission is given by the authors, please cite https://doi.org/10.3390/app13021155
+in future manuscripts that are not written by the original authors of this UMAT.
+
+3) Please always explain in your work or manuscript,
+that this UMAT was originated from the previous publication. 
+Always provide credit to the original authors
+
+4) To ask permission to use the UMAT use the email mario.rui.arruda@tecnico.ulisboa.pt
+
+----####--------------------------------####---
+----####--------R&D FORTRAN CODE--------####---
+----####--------------------------------####---
+
+1) The UMAT has been updated since the initial publication, and since it is academic code it may not be
+optimize, and some bugs may accour.
+
+2) The UMAT was initialty formulated only for 3D, but extended to 2D. 
+The 2D analysis is not at the moment tested or validated, caution in the final results is advise.
+
+3) By default the code is generated using Implicit Analysis, with the Stabilization Algorithm. 
+For Geometrical Non-Linear Analysis, when using this code, the viscosity parameter should be below 1E-7.
+
+4) Future versions of this UMAT will be posted without warning.
+
+5) The Jacobian is written in terms of secant matrix (not tangent matrix),
+therefore it is not expected an quadratic convergence when using ABAQUS standard,
+and it is recomended to reduce some iterative criteria (in the step module) to allow convergence.
+
+6) The matrix damage evolution has been updated into a new function, 
+not present in the original manuscript to better simulate the 3D behaviour. 
+This is in RED color in the Pre-Print_UMAT_Hashin_3D.pdf
+
+----####--------------------------------####---
+----####------RUNNING INSTRUCTIONS------####---
+----####--------------------------------####---
+
+1) This is an UMAT made for ABAQUS 2022, using Intel Fortran Compiler 2016 for Windows 10.
+
+2) The original code is in Fortran 90, and is not ready to run in classical ABAQUS linked with FORTRAN 77 flags, 
+these need to be modified depending on the chosen compiler.
+For this reason, the UMAT is already compiled into an .OBJ file for windows use and .O for linux use.
+
+3) This can be used directly in the “command line or power shell” in windows user=umat.obj or in linux user=umat.o
+
+4) For linux the .O object files was compiled using gfortran (from GNU project), 
+it may not work with Linux Intel Compiler during the final LINKING.
+
+5) Example on how to run a job with object files in ABAQUS
+-Example in CMD “command line” for windows 10:
+abaqus job=example cpus=2 user=umat.obj
+
+-Example in terminal for linux:
+abaqus job=example cpus=2 user=umat.o
+
