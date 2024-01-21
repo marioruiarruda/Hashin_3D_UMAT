@@ -60,3 +60,6 @@ abaqus job=example cpus=2 user=umat.obj
 -Example in terminal for linux:
 abaqus job=example cpus=2 user=umat.o
 
+Alternatively, with Intel Compilers, FORTRAN 77 standards can still be used,
+if the directive !DIR$ FREEFORM is placed in the 1s line before the start of the UMAT,
+and the extension is changed from .F90 to .FOR.
