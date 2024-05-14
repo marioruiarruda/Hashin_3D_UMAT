@@ -47,6 +47,7 @@ This is in RED color in the Pre-Print_UMAT_Hashin_3D.pdf
 2) The original code is in Fortran 90, and is not ready to run in classical ABAQUS linked with FORTRAN 77 flags, 
 these need to be modified depending on the chosen compiler.
 For this reason, the UMAT is already compiled into an .OBJ file for windows use and .O for linux use.
+For ABAQUS above version 2020 this is no longer a problem and it can run directly files with extension f.90.
 
 3) This can be used directly in the “command line or power shell” in windows user=umat.obj or in linux user=umat.o
 
